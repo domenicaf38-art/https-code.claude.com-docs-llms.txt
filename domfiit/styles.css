@@ -83,6 +83,14 @@ body {
   overflow-x: clip;
 }
 img, svg, video { display: block; max-width: 100%; }
+
+/* Global grain texture — subtle editorial polish */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+  opacity: .035; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
 button { font: inherit; color: inherit; cursor: pointer; border: 0; background: none; }
 a { color: inherit; text-decoration: none; }
 p { text-wrap: pretty; }
@@ -176,6 +184,27 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
    6. Hero
    ============================================================= */
 .hero { position: relative; padding-top: calc(var(--nav-h) + clamp(2rem, 5vw, 4rem)); padding-bottom: clamp(3rem, 7vw, 5.5rem); overflow: clip; }
+.hero-mesh {
+  position: absolute; inset: -20% -10% -10% -10%; z-index: -2;
+  background:
+    radial-gradient(42% 38% at 18% 22%, color-mix(in srgb, var(--teal) 30%, transparent), transparent 65%),
+    radial-gradient(38% 34% at 82% 18%, color-mix(in srgb, var(--coral) 26%, transparent), transparent 62%),
+    radial-gradient(46% 40% at 68% 78%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 65%);
+  filter: blur(70px) saturate(130%);
+  opacity: .9;
+  animation: heroMeshDrift 30s ease-in-out infinite;
+}
+@keyframes heroMeshDrift {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-1.5%, 1.5%, 0) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-mesh { animation: none; } }
+.hero-grid-lines {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: repeating-linear-gradient(90deg, var(--line-2) 0 1px, transparent 1px 8.333%);
+  mask-image: linear-gradient(180deg, black, transparent 85%);
+  -webkit-mask-image: linear-gradient(180deg, black, transparent 85%);
+}
 .hero-grid { display: grid; gap: clamp(2.4rem, 6vw, 3.5rem); align-items: center; }
 @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.08fr .92fr; } }
 .hero-brief { font-family: var(--mono); font-size: .78rem; color: var(--ink-mute); border: 1px solid var(--line); border-radius: 999px; padding: .5rem 1rem; display: inline-flex; gap: .6rem; align-items: center; margin-bottom: 1.4rem; }
@@ -296,7 +325,15 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 /* =============================================================
    10. Portfolio (mockup grid)
    ============================================================= */
-.portfolio-grid { display: grid; gap: 1.4rem; max-width: 900px; margin-inline: auto; align-items: start; }
+.portfolio-grid { display: grid; gap: 1.4rem; max-width: 900px; margin-inline: auto; align-items: start; position: relative; }
+.portfolio-grid::before {
+  content: ""; position: absolute; inset: -12% -6%; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(45% 70% at 22% 50%, color-mix(in srgb, var(--coral) 16%, transparent), transparent 70%),
+    radial-gradient(45% 70% at 78% 50%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 70%);
+  filter: blur(60px);
+}
+.browser-frame { position: relative; }
 @media (min-width: 720px) { .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .portfolio-real-shot { display: block; width: 100%; height: auto; }
 .browser-frame { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(20,22,26,0.3); background: var(--surface); }
@@ -426,9 +463,28 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 /* =============================================================
    15. Final CTA
    ============================================================= */
-.final-cta { background: var(--ink); color: var(--bg); }
-.final-cta h2 { color: var(--bg); }
-.final-cta .section-lede { color: rgba(247,247,244,0.68); }
+.final-cta { background: var(--ink); color: var(--bg); position: relative; overflow: clip; }
+.final-cta h2 { color: var(--bg); position: relative; }
+.final-cta .section-lede { color: rgba(247,247,244,0.68); position: relative; }
+.final-cta-glow {
+  position: absolute; inset: -30% -10% -10% -10%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(38% 60% at 30% 50%, color-mix(in srgb, var(--teal) 45%, transparent), transparent 70%),
+    radial-gradient(38% 60% at 70% 50%, color-mix(in srgb, var(--coral) 40%, transparent), transparent 70%);
+  filter: blur(90px) saturate(140%);
+  opacity: .55;
+}
+.final-cta .btn { position: relative; }
+
+/* Dot-grid decorative background */
+.dot-grid { position: relative; }
+.dot-grid::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: radial-gradient(circle, var(--line) 1.4px, transparent 1.4px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(60% 60% at 50% 30%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(60% 60% at 50% 30%, black, transparent 80%);
+}
 
 /* =============================================================
    16. Footer
