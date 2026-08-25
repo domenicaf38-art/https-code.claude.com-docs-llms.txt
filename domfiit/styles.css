@@ -296,7 +296,9 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 /* =============================================================
    10. Portfolio (mockup grid)
    ============================================================= */
-.portfolio-single { max-width: 420px; margin-inline: auto; }
+.portfolio-grid { display: grid; gap: 1.4rem; max-width: 900px; margin-inline: auto; align-items: start; }
+@media (min-width: 720px) { .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.portfolio-real-shot { display: block; width: 100%; height: auto; }
 .browser-frame { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(20,22,26,0.3); background: var(--surface); }
 .browser-chrome { display: flex; align-items: center; gap: .5rem; padding: .6rem .8rem; background: var(--bg-2); border-bottom: 1px solid var(--line); }
 .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
