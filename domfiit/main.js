@@ -238,8 +238,8 @@
         var firstName = (form.elements.name.value.trim().split(/\s+/)[0]) || "";
         if (msg) {
           msg.textContent = currentLang === "es"
-            ? (firstName ? firstName + ", " : "") + "gracias por escribir. Te responderé dentro de un día hábil. (Demo — este formulario no envía datos reales.)"
-            : (firstName ? firstName + ", " : "") + "thanks for reaching out. I'll reply within one business day. (Demo — this form does not send real data.)";
+            ? (firstName ? firstName + ", " : "") + "gracias por escribir. Te responderé dentro de un día hábil. (Demo: este formulario no envía datos reales.)"
+            : (firstName ? firstName + ", " : "") + "thanks for reaching out. I'll reply within one business day. (Demo: this form does not send real data.)";
         }
         form.classList.remove("is-sending");
         card.classList.add("is-sent");

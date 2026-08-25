@@ -207,24 +207,32 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 @keyframes funnelPulse { 0% { transform: translateX(0); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateX(220px); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .funnel-pulse { animation: none; opacity: 0; } }
 
-/* hero photo card */
-.hero-photo-card {
-  position: relative; max-width: 400px; margin-inline: auto;
-  border-radius: 22px; overflow: hidden; border: 1px solid var(--line);
-  box-shadow: 0 60px 100px -46px rgba(20,22,26,0.32);
+/* founder card (hero) — small photo, not a dominant portrait */
+.founder-card {
+  max-width: 300px; margin-inline: auto; text-align: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+  padding: 1.8rem 1.5rem; box-shadow: 0 40px 80px -40px rgba(20,22,26,0.28);
 }
-.hero-photo-card img { width: 100%; aspect-ratio: 900/1001; object-fit: cover; }
-.hero-photo-caption {
-  position: absolute; left: 1rem; right: 1rem; bottom: 1rem;
-  background: color-mix(in srgb, var(--surface) 88%, transparent);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--line); border-radius: 12px; padding: .7rem .9rem;
+.founder-photo {
+  width: 92px; height: 92px; object-fit: cover; border-radius: 50%;
+  margin-inline: auto; border: 3px solid var(--bg-2);
 }
-.hero-photo-caption strong { display: block; font-family: var(--display); font-size: .95rem; color: var(--ink); }
-.hero-photo-caption span { font-size: .78rem; color: var(--ink-mute); }
+.founder-info { margin-top: .9rem; }
+.founder-info strong { display: block; font-family: var(--display); font-size: 1rem; color: var(--ink); }
+.founder-info span { font-size: .82rem; color: var(--ink-mute); }
+.founder-badge {
+  display: inline-flex; align-items: center; gap: .4rem; margin-top: 1.1rem;
+  padding: .5rem .8rem; border-radius: 999px; background: var(--teal-soft);
+  font-size: .74rem; font-weight: 600; color: var(--teal-deep); text-align: left;
+}
+.founder-badge svg { width: 14px; height: 14px; flex: none; }
 
-/* about photo */
-.about-photo { width: 100%; aspect-ratio: 900/1001; object-fit: cover; border-radius: 14px; }
+/* about photo — small circular avatar, not a large portrait */
+.about-card { text-align: center; }
+.about-photo {
+  width: 96px; height: 96px; object-fit: cover; border-radius: 50%;
+  margin-inline: auto; border: 3px solid var(--bg-2);
+}
 
 /* whatsapp floating button */
 .whatsapp-float {
@@ -298,6 +306,11 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 .case-mock {
   aspect-ratio: 4/5; padding: 1.4rem 1.2rem;
   display: flex; flex-direction: column; gap: .55rem;
+}
+.case-mock-avatar {
+  width: 34px; height: 34px; border-radius: 50%; flex: none;
+  display: grid; place-items: center; font-size: .62rem; font-weight: 700;
+  background: rgba(255,255,255,0.6); border: 1px solid rgba(0,0,0,0.08); margin-bottom: .2rem;
 }
 .case-mock-kicker { font-size: .62rem; letter-spacing: .08em; text-transform: uppercase; }
 .case-mock-title { font-style: italic; font-size: clamp(1rem, 2.2vw, 1.3rem); max-width: 13ch; line-height: 1.15; }
