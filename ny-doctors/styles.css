@@ -98,11 +98,10 @@ ul { list-style: none; padding: 0; }
 .section { padding-block: clamp(3.5rem, 7vw, 6.5rem); position: relative; }
 .section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
 .eyebrow {
-  display: inline-flex; align-items: center; gap: .5rem;
+  display: inline-flex; align-items: center;
   font-size: .72rem; letter-spacing: .16em; text-transform: uppercase;
   color: var(--gold-dark); font-weight: 600; margin-bottom: .9rem;
 }
-.eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--gold-dark); }
 .section-head { max-width: 640px; margin-bottom: clamp(2rem, 4vw, 3.2rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-lede { margin-top: .9rem; color: var(--ink-mute); font-size: 1.05rem; }

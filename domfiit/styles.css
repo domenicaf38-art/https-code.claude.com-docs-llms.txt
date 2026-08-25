@@ -107,11 +107,10 @@ ul { list-style: none; padding: 0; }
 .section--tight { padding-block: clamp(2.2rem, 4vw, 3.4rem); }
 .section--rule { border-top: 1px solid var(--line); }
 .kicker {
-  display: inline-flex; align-items: center; gap: .6rem;
+  display: inline-flex; align-items: center;
   font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; text-transform: uppercase;
   color: var(--coral-deep); font-weight: 500; margin-bottom: 1.1rem;
 }
-.kicker::before { content: ""; width: 22px; height: 1px; background: var(--coral-deep); }
 .section-head { max-width: 640px; margin-bottom: clamp(2rem, 4vw, 3rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-lede { margin-top: 1rem; color: var(--ink-mute); font-size: 1.05rem; max-width: 60ch; }
@@ -297,8 +296,7 @@ p.lead { font-size: clamp(1.02rem, 1.5vw, 1.15rem); color: var(--ink-mute); }
 /* =============================================================
    10. Portfolio (mockup grid)
    ============================================================= */
-.portfolio-grid { display: grid; gap: 1.4rem; }
-@media (min-width: 860px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+.portfolio-single { max-width: 420px; margin-inline: auto; }
 .browser-frame { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 40px 80px -40px rgba(20,22,26,0.3); background: var(--surface); }
 .browser-chrome { display: flex; align-items: center; gap: .5rem; padding: .6rem .8rem; background: var(--bg-2); border-bottom: 1px solid var(--line); }
 .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
