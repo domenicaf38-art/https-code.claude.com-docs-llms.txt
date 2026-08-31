@@ -27,7 +27,6 @@
 
   #dfx .wrap{width:100%;max-width:1180px;margin:0 auto;padding:0 24px;}
   #dfx .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-dark);font-weight:800;margin-bottom:14px;}
-  #dfx .eyebrow::before{content:"";width:16px;height:2px;background:var(--pink);display:inline-block;}
   #dfx section{position:relative;padding:100px 0;}
   #dfx section.on-black{background:var(--ink-black);color:#fff;}
   #dfx section.on-soft{background:var(--bg-soft);}
@@ -132,6 +131,7 @@
   #dfx .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch;max-width:820px;margin:0 auto;}
   #dfx .price-card{padding:36px 30px;display:flex;flex-direction:column;position:relative;border-radius:var(--radius);background:#fff;border:1.5px solid var(--line);}
   #dfx .price-sessions{display:inline-flex;align-self:flex-start;background:var(--pink-tint);color:var(--pink-dark);font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+  #dfx .price-proof{aspect-ratio:16/9;border-radius:12px;margin-bottom:20px;}
   #dfx .price-card.is-featured{border-color:var(--pink);background:linear-gradient(165deg, var(--pink-tint), #fff 55%);transform:scale(1.03);}
   #dfx .price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 16px;border-radius:100px;white-space:nowrap;}
   #dfx .price-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;}
@@ -266,7 +266,7 @@
       <div class="hero-copy reveal">
         <span class="eyebrow">Coaching online · Recomposición corporal</span>
         <h1 class="hero-title">No es fuerza de voluntad, <mark>es sistema.</mark></h1>
-        <p class="hero-sub">Entrenamiento y alimentación diseñados por una psicóloga y competidora de bikini fitness. Cambiamos hábitos, no solo rutinas. Tu plan llega a tu correo apenas completas el pago.</p>
+        <p class="hero-sub">Planes de entrenamiento y alimentación diseñados para lograr los cambios que quieres, trabajando desde tu mentalidad para que los sostengas en el tiempo y se conviertan en tu estilo de vida.</p>
         <div class="hero-actions">
           <a href="#paquetes" class="btn">Ver programas</a>
           <a href="#metodo" class="btn btn-outline">Conocer el método</a>
@@ -299,8 +299,8 @@
         <img src="assets/img/about.jpg" alt="Domenica, psicóloga y personal trainer" onerror="this.parentElement.classList.add('img-missing')">
       </div>
       <div class="about-copy reveal">
-        <span class="eyebrow">Sobre Domenica</span>
-        <h2>Psicóloga, competidora y entrenadora: el método nace de las tres cosas a la vez.</h2>
+        <span class="eyebrow">Sobre mí</span>
+        <h2>Soy psicóloga, competidora de bikini fitness y personal trainer.</h2>
         <p>Durante años odié mirarme al espejo. Me daba vergüenza lo que veía, no tenía autoestima ni amor propio, así que decidí enfocarme en mí: en trabajar eso que me hacía sentir mal por dentro y por fuera.</p>
         <p>Sé exactamente lo que se siente no tener autoestima, no sentirte cómoda en tu propio cuerpo. <strong>Todo empieza contigo, con tu cuerpo, con cómo te ves</strong>, y por eso hoy acompaño a otras mujeres a vivir ese mismo cambio.</p>
         <p>Como psicóloga entendí algo clave trabajando con mis pacientes: el problema casi nunca es la rutina, es el sistema de hábitos que la sostiene. DOMFIT une entrenamiento con propósito, alimentación realista y el trabajo mental que hace que el cambio dure.</p>
@@ -321,8 +321,8 @@
       </div>
       <div class="about-copy reveal">
         <span class="eyebrow">Mi transformación</span>
-        <h2>Esto no es una pose para redes, son años de trabajo real.</h2>
-        <p>La misma constancia que uso hoy arriba de la tarima es la que enseño en cada programa. Nada de atajos, nada de magia: solo sistema sostenido en el tiempo.</p>
+        <h2>Esta transformación no fue solo física: cuando cambias tus hábitos, tu vida cambia.</h2>
+        <p>No necesitas una rutina más, necesitas un cambio de mentalidad. Todo empieza con disciplina, autocuidado y autoconfianza, y eso es exactamente lo que enseño en cada programa.</p>
       </div>
     </div>
   </section>
@@ -420,6 +420,9 @@
             <span class="price-badge">Más elegido</span>
             <div class="price-name">Glúteos Perfectos</div>
             <div class="price-desc">Rutina y alimentación enfocadas 100% en glúteos.</div>
+            <div class="price-proof photo-slot" data-label="REEMPLAZAR: assets/img/gluteos-antes-despues.jpg (antes/después de una clienta)">
+              <img src="assets/img/gluteos-antes-despues.jpg" alt="Antes y después de glúteos" onerror="this.parentElement.classList.add('img-missing')">
+            </div>
             <div class="price-amount"><span class="num">$53,99</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Rutina de glúteos con progresión mensual</li>
