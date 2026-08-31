@@ -36,11 +36,13 @@
   #dfx .section-head p{color:var(--ink-mute);margin-top:16px;font-size:1.05rem;}
   #dfx .on-black .section-head p{color:rgba(255,255,255,.65);}
 
-  /* PHOTO SLOTS — graceful fallback while real photos are added to assets/img/ */
-  #dfx .photo-slot{position:relative;background-size:cover;background-position:center;background-repeat:no-repeat;
-    background-color:var(--pink-pale);
+  /* PHOTO SLOTS: real <img> with onerror fallback, so the placeholder disappears automatically once a real photo lands in assets/img/ */
+  #dfx .photo-slot{position:relative;background-color:var(--pink-pale);
     display:flex;align-items:flex-end;justify-content:center;overflow:hidden;}
-  #dfx .photo-slot::after{content:attr(data-label);position:absolute;inset:auto 12px 12px 12px;font-size:.66rem;letter-spacing:.03em;text-align:center;color:var(--pink-dark);background:rgba(255,255,255,.88);border:1px dashed var(--pink);border-radius:10px;padding:8px 10px;font-family:'Inter',sans-serif;font-weight:600;}
+  #dfx .photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+  #dfx .photo-slot.img-missing img{display:none;}
+  #dfx .photo-slot::after{content:attr(data-label);display:none;position:absolute;inset:auto 12px 12px 12px;font-size:.66rem;letter-spacing:.03em;text-align:center;color:var(--pink-dark);background:rgba(255,255,255,.88);border:1px dashed var(--pink);border-radius:10px;padding:8px 10px;font-family:'Inter',sans-serif;font-weight:600;z-index:3;}
+  #dfx .photo-slot.img-missing::after{display:block;}
 
   #dfx .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--pink);color:#fff;font-weight:700;letter-spacing:.01em;font-size:.95rem;padding:16px 30px;border:none;border-radius:100px;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease, background .25s ease;box-shadow:0 10px 26px -10px rgba(255,45,120,.6);}
   #dfx .btn:hover{transform:translateY(-3px);box-shadow:0 16px 34px -10px rgba(255,45,120,.75);background:var(--pink-dark);}
@@ -83,8 +85,8 @@
   #dfx .hero-badge{display:flex;flex-direction:column;}
   #dfx .hero-badge b{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.6rem;font-weight:800;color:var(--pink-dark);}
   #dfx .hero-badge span{font-size:.78rem;color:var(--ink-mute);}
-  #dfx .hero-photo{aspect-ratio:3/4;border-radius:24px 24px 0 0;background-image:url('assets/img/hero.jpg'),linear-gradient(160deg,var(--pink-pale) 0%, var(--pink-tint) 100%);}
-  #dfx .hero-photo .hero-tag{background:var(--ink-black);color:#fff;font-size:.82rem;font-weight:700;padding:14px 20px;border-radius:14px 14px 0 0;display:flex;align-items:center;gap:10px;width:100%;justify-content:center;}
+  #dfx .hero-photo{aspect-ratio:3/4;border-radius:24px 24px 0 0;background-image:linear-gradient(160deg,var(--pink-pale) 0%, var(--pink-tint) 100%);}
+  #dfx .hero-photo .hero-tag{position:relative;z-index:2;background:var(--ink-black);color:#fff;font-size:.82rem;font-weight:700;padding:14px 20px;border-radius:14px 14px 0 0;display:flex;align-items:center;gap:10px;width:100%;justify-content:center;text-align:center;}
   #dfx .hero-photo .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);flex:none;}
 
   /* MARQUEE */
@@ -96,7 +98,8 @@
 
   /* ABOUT */
   #dfx .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;}
-  #dfx .about-photo{aspect-ratio:3/4;border-radius:var(--radius);background-image:url('assets/img/about.jpg'),linear-gradient(160deg,var(--pink-pale),var(--pink-tint));}
+  #dfx .about-photo{aspect-ratio:3/4;border-radius:var(--radius);background-image:linear-gradient(160deg,var(--pink-pale),var(--pink-tint));}
+  #dfx .transform-photo{aspect-ratio:4/3;border-radius:var(--radius);background-image:linear-gradient(160deg,var(--pink-pale),var(--pink-tint));}
   #dfx .about-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem);line-height:1.12;text-wrap:balance;margin-bottom:20px;}
   #dfx .about-copy p{color:var(--ink-mute);font-size:1.03rem;margin-bottom:16px;}
   #dfx .about-copy p strong{color:var(--ink);font-weight:700;}
@@ -155,11 +158,12 @@
   #dfx .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   #dfx .shop-card{overflow:hidden;padding:0;border-radius:var(--radius);background:#fff;border:1px solid var(--line);}
   #dfx .shop-img{aspect-ratio:1/1;background-image:linear-gradient(150deg,var(--pink-pale),var(--pink-tint));position:relative;}
-  #dfx .shop-tag{position:absolute;top:14px;left:14px;background:var(--ink-black);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:100px;}
+  #dfx .shop-tag{position:absolute;top:14px;left:14px;z-index:2;background:var(--ink-black);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:100px;}
   #dfx .shop-body{padding:22px 22px 26px;}
   #dfx .shop-body h3{font-size:1.02rem;margin-bottom:6px;}
   #dfx .shop-body p{color:var(--ink-mute);font-size:.85rem;margin-bottom:16px;}
   #dfx .shop-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  #dfx .shop-row.only-btn{justify-content:flex-end;}
   #dfx .shop-price{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.15rem;}
 
   /* FAQ */
@@ -262,7 +266,7 @@
       <div class="hero-copy reveal">
         <span class="eyebrow">Coaching online · Recomposición corporal</span>
         <h1 class="hero-title">No es fuerza de voluntad, <mark>es sistema.</mark></h1>
-        <p class="hero-sub">Entrenamiento y alimentación diseñados por una psicóloga y competidora de bikini fitness. Cambiamos hábitos, no solo rutinas — y tu plan llega a tu correo apenas completas el pago.</p>
+        <p class="hero-sub">Entrenamiento y alimentación diseñados por una psicóloga y competidora de bikini fitness. Cambiamos hábitos, no solo rutinas. Tu plan llega a tu correo apenas completas el pago.</p>
         <div class="hero-actions">
           <a href="#paquetes" class="btn">Ver programas</a>
           <a href="#metodo" class="btn btn-outline">Conocer el método</a>
@@ -270,11 +274,12 @@
         <div class="hero-badges">
           <div class="hero-badge"><b>Online</b><span>desde cualquier país</span></div>
           <div class="hero-badge"><b>Al instante</b><span>entrega automática</span></div>
-          <div class="hero-badge"><b>Psic. + PT</b><span>mente y cuerpo</span></div>
+          <div class="hero-badge"><b>Psicóloga</b><span>+ Personal Trainer</span></div>
         </div>
       </div>
-      <div class="hero-photo photo-slot" data-label="REEMPLAZAR: assets/img/hero.jpg — foto de Domenica en competencia/entrenando, retrato 3:4">
-        <div class="hero-tag"><span class="dot"></span> Entrega automática de tu rutina al pagar</div>
+      <div class="hero-photo photo-slot" data-label="REEMPLAZAR: assets/img/hero.jpg (foto que enviaste: conjunto negro, fondo gris)">
+        <img src="assets/img/hero.jpg" alt="Domenica" onerror="this.parentElement.classList.add('img-missing')">
+        <div class="hero-tag"><span class="dot"></span> Yo también pensaba que era imposible. No lo es: solo necesitas una estructura.</div>
       </div>
     </div>
   </section>
@@ -290,17 +295,34 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap about-grid">
-      <div class="about-photo photo-slot reveal" data-label="REEMPLAZAR: assets/img/about.jpg — foto de perfil de Domenica"></div>
+      <div class="about-photo photo-slot reveal" data-label="REEMPLAZAR: assets/img/about.jpg (foto de perfil de Domenica)">
+        <img src="assets/img/about.jpg" alt="Domenica, psicóloga y personal trainer" onerror="this.parentElement.classList.add('img-missing')">
+      </div>
       <div class="about-copy reveal">
         <span class="eyebrow">Sobre Domenica</span>
-        <h2>Psicóloga, competidora y entrenadora — el método nace de las tres cosas a la vez.</h2>
-        <p>Durante años ayudé a mis pacientes a entender su relación con el cuerpo desde el consultorio, mientras yo misma competía en tarima y entrenaba a otras mujeres. <strong>Ahí entendí que el problema casi nunca es la rutina: es el sistema de hábitos que la sostiene.</strong></p>
-        <p>DOMFIT une esas tres disciplinas en un solo método: entrenamiento con propósito, alimentación realista y el trabajo mental que hace que el cambio dure más de dos semanas.</p>
+        <h2>Psicóloga, competidora y entrenadora: el método nace de las tres cosas a la vez.</h2>
+        <p>Durante años odié mirarme al espejo. Me daba vergüenza lo que veía, no tenía autoestima ni amor propio, así que decidí enfocarme en mí: en trabajar eso que me hacía sentir mal por dentro y por fuera.</p>
+        <p>Sé exactamente lo que se siente no tener autoestima, no sentirte cómoda en tu propio cuerpo. <strong>Todo empieza contigo, con tu cuerpo, con cómo te ves</strong>, y por eso hoy acompaño a otras mujeres a vivir ese mismo cambio.</p>
+        <p>Como psicóloga entendí algo clave trabajando con mis pacientes: el problema casi nunca es la rutina, es el sistema de hábitos que la sostiene. DOMFIT une entrenamiento con propósito, alimentación realista y el trabajo mental que hace que el cambio dure.</p>
         <div class="chip-row">
-          <span class="chip"><i></i> Psicóloga colegiada</span>
+          <span class="chip"><i></i> Psicóloga</span>
           <span class="chip"><i></i> Competidora bikini fitness</span>
-          <span class="chip"><i></i> Personal trainer certificada</span>
+          <span class="chip"><i></i> Personal Trainer certificada IFBB Pro</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTES Y DESPUÉS -->
+  <section id="transformacion" class="on-soft">
+    <div class="wrap about-grid">
+      <div class="transform-photo photo-slot reveal" data-label="REEMPLAZAR: assets/img/antes-despues.jpg (collage que enviaste: bikini rosa vs. traje de competencia rojo)">
+        <img src="assets/img/antes-despues.jpg" alt="Transformación física de Domenica" onerror="this.parentElement.classList.add('img-missing')">
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">Mi transformación</span>
+        <h2>Esto no es una pose para redes, son años de trabajo real.</h2>
+        <p>La misma constancia que uso hoy arriba de la tarima es la que enseño en cada programa. Nada de atajos, nada de magia: solo sistema sostenido en el tiempo.</p>
       </div>
     </div>
   </section>
@@ -322,7 +344,7 @@
         <div class="method-card reveal">
           <div class="method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 6.5l11 11M4 9l4-4M20 15l-4 4M2 12h3M19 12h3M12 2v3M12 19v3"/></svg></div>
           <h3>Entrenamiento con propósito</h3>
-          <p>Rutinas específicas para tu objetivo — glúteos, piernas, definición general — con o sin gimnasio.</p>
+          <p>Rutinas específicas para tu objetivo (glúteos, piernas, definición general), con o sin gimnasio.</p>
         </div>
         <div class="method-card reveal">
           <div class="method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -332,7 +354,7 @@
         <div class="method-card reveal">
           <div class="method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 21c0-4-3.6-6-8-6s-8 2-8 6M12 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
           <h3>Acompañamiento cercano</h3>
-          <p>Seguimiento real según tu programa — no quedas sola después de recibir el plan.</p>
+          <p>Seguimiento real según tu programa: no quedas sola después de recibir el plan.</p>
         </div>
       </div>
     </div>
@@ -468,7 +490,9 @@
       <div class="testi-grid">
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-1.jpg"></div>
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-1.jpg">
+            <img src="assets/img/testimonial-1.jpg" alt="Testimonio de Valentina R." onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
             <p class="testi-quote">"Lo que más cambió no fue mi cuerpo, fue mi relación con la comida. Por primera vez sostuve un plan más de un mes."</p>
@@ -477,7 +501,9 @@
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-2.jpg"></div>
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-2.jpg">
+            <img src="assets/img/testimonial-2.jpg" alt="Testimonio de Camila S." onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
             <p class="testi-quote">"Entreno desde casa, sin gimnasio, y el plan se ajusta a mi horario real. Se nota que lo diseñó alguien que entiende psicología."</p>
@@ -486,7 +512,9 @@
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-3.jpg"></div>
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-3.jpg">
+            <img src="assets/img/testimonial-3.jpg" alt="Testimonio de Andrea M." onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
             <p class="testi-quote">"Vivo fuera de mi país y aun así el seguimiento se sintió cercano. Recibí todo por email en minutos."</p>
@@ -495,7 +523,9 @@
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-4.jpg"></div>
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-4.jpg">
+            <img src="assets/img/testimonial-4.jpg" alt="Testimonio de Fernanda L." onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
             <p class="testi-quote">"Dejé de buscar la dieta perfecta y empecé a construir hábitos que sí puedo mantener."</p>
@@ -517,12 +547,13 @@
       <div class="shop-grid">
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-garcinia.jpg">
+          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-garcinia.jpg (foto que enviaste: caja Garcinia Cambogia Komasi)">
+            <img src="assets/img/product-garcinia.jpg" alt="Garcinia Cambogia" onerror="this.parentElement.classList.add('img-missing')">
             <span class="shop-tag">Bestseller</span>
           </div>
           <div class="shop-body">
             <h3>Garcinia Cambogia</h3>
-            <p>Quemador de grasa 100% natural, pensado para complementar tu entrenamiento.</p>
+            <p>Quemador de grasa 100% natural con L-Carnitina, pensado para complementar tu entrenamiento.</p>
             <div class="shop-row">
               <span class="shop-price">$59,99 USD</span>
               <!-- REEMPLAZAR: enlace real de compra de la Garcinia Cambogia -->
@@ -532,42 +563,44 @@
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-guia-desinflamacion.jpg">
-            <span class="shop-tag">Digital</span>
+          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-guia-antiinflamatoria.jpg (cuando tengas la portada de la guía)">
+            <img src="assets/img/product-guia-antiinflamatoria.jpg" alt="Guía Antiinflamatoria" onerror="this.parentElement.classList.add('img-missing')">
+            <span class="shop-tag">Próximamente</span>
           </div>
           <div class="shop-body">
-            <h3>Guía de desinflamación</h3>
+            <h3>Guía Antiinflamatoria</h3>
             <p>PDF con alimentación y hábitos para bajar la hinchazón y sentirte liviana en días clave.</p>
-            <div class="shop-row">
-              <span class="shop-price">$14,99 USD</span>
-              <!-- REEMPLAZAR: enlace real de compra de la guía de desinflamación (precio sugerido, confirmar con Domenica) -->
-              <a href="#shop-checkout" class="btn btn-sm btn-dark">Comprar</a>
+            <div class="shop-row only-btn">
+              <!-- Producto en preparación: activar el precio y el enlace de compra cuando esté lista -->
+              <a href="#" class="btn btn-sm btn-outline">Muy pronto</a>
             </div>
           </div>
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-apparel.jpg"></div>
+          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-apparel.jpg (ropa deportiva en tendencia)">
+            <img src="assets/img/product-apparel.jpg" alt="Ropa deportiva DOMFIT" onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="shop-body">
-            <h3>Set deportivo DOMFIT</h3>
-            <p>Legging + top diseñados para entrenar y competir con comodidad.</p>
-            <div class="shop-row">
-              <span class="shop-price">$58 USD</span>
-              <!-- REEMPLAZAR: enlace real de compra de ropa deportiva -->
-              <a href="#shop-checkout" class="btn btn-sm btn-dark">Comprar</a>
+            <h3>Ropa de tendencia para el gym</h3>
+            <p>Selección de prendas deportivas en tendencia para entrenar con estilo y comodidad.</p>
+            <div class="shop-row only-btn">
+              <!-- REEMPLAZAR: enlace real al catálogo de ropa deportiva -->
+              <a href="#shop-checkout" class="btn btn-sm btn-dark">Ver colección</a>
             </div>
           </div>
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-supplement.jpg"></div>
+          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-supplement.jpg">
+            <img src="assets/img/product-supplement.jpg" alt="Suplementos DOMFIT" onerror="this.parentElement.classList.add('img-missing')">
+          </div>
           <div class="shop-body">
             <h3>Suplemento base DOMFIT</h3>
             <p>Apoyo nutricional diario para acompañar tu plan de alimentación.</p>
-            <div class="shop-row">
-              <span class="shop-price">$42 USD</span>
+            <div class="shop-row only-btn">
               <!-- REEMPLAZAR: enlace real de compra del suplemento -->
-              <a href="#shop-checkout" class="btn btn-sm btn-dark">Comprar</a>
+              <a href="#shop-checkout" class="btn btn-sm btn-dark">Ver más</a>
             </div>
           </div>
         </div>
@@ -602,7 +635,7 @@
         </details>
         <details>
           <summary>¿Cuánto tiempo toma ver resultados?<span class="plus">+</span></summary>
-          <div class="faq-a">La mayoría de clientas nota cambios visibles y de energía entre la semana 4 y 6, siempre que se sostenga la constancia — por eso el trabajo de hábitos es parte central del método.</div>
+          <div class="faq-a">La mayoría de clientas nota cambios visibles y de energía entre la semana 4 y 6, siempre que se sostenga la constancia. Por eso el trabajo de hábitos es parte central del método.</div>
         </details>
         <details>
           <summary>¿Qué métodos de pago aceptan?<span class="plus">+</span></summary>
@@ -620,7 +653,7 @@
   <section id="checkout">
     <div class="cta-final reveal">
       <h2>Tu cambio de hábitos empieza con un plan, no con otro lunes.</h2>
-      <p>Elige tu programa, paga de forma segura y recibe tu rutina personalizada al instante — sin importar en qué parte del mundo estés.</p>
+      <p>Elige tu programa, paga de forma segura y recibe tu rutina personalizada al instante, sin importar en qué parte del mundo estés.</p>
       <div class="btn-row">
         <a href="#paquetes" class="btn">Ver programas y precios</a>
         <a href="#faq" class="btn btn-outline">Resolver mis dudas</a>
