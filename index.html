@@ -122,14 +122,14 @@
   #dfx .step p{color:rgba(255,255,255,.62);font-size:.92rem;}
 
   /* PRICING */
-  #dfx .pricing-group{margin-bottom:64px;}
+  #dfx .pricing-group{margin-bottom:44px;}
   #dfx .pricing-group:last-child{margin-bottom:0;}
   #dfx .pricing-group-head{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:28px;text-align:center;}
   #dfx .pricing-group-head h3{font-size:1.15rem;}
   #dfx .location-tag{background:var(--ink-black);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:100px;white-space:nowrap;}
   #dfx .pricing-group-note{text-align:center;color:var(--ink-mute);font-size:.85rem;margin:-16px 0 28px;}
   #dfx .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch;max-width:820px;margin:0 auto;}
-  #dfx .pricing-grid.cols-3{grid-template-columns:repeat(3,1fr);max-width:1080px;}
+  #dfx .pricing-grid.cols-3{grid-template-columns:repeat(3,1fr);max-width:1080px;align-items:start;}
   #dfx .price-tag{display:inline-flex;align-self:flex-start;background:var(--ink-black);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.03em;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
   #dfx .price-card{padding:36px 30px;display:flex;flex-direction:column;position:relative;border-radius:var(--radius);background:#fff;border:1.5px solid var(--line);}
   #dfx .price-sessions{display:inline-flex;align-self:flex-start;background:var(--pink-tint);color:var(--pink-dark);font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
@@ -150,6 +150,9 @@
   #dfx .testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
   #dfx .testi-card{border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;}
   #dfx .testi-photo{aspect-ratio:4/5;background-image:linear-gradient(160deg,var(--pink-pale),var(--pink-tint));}
+  #dfx .testi-photo.is-screenshot{aspect-ratio:9/16;background-color:var(--ink-black);}
+  #dfx .testi-photo.is-screenshot img{object-fit:contain;}
+  #dfx .testi-body-caption{padding:16px 20px;text-align:center;}
   #dfx .testi-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1;}
   #dfx .testi-stars{color:var(--pink);font-size:.85rem;letter-spacing:2px;}
   #dfx .testi-quote{font-size:.9rem;color:var(--ink-soft);flex:1;}
@@ -305,7 +308,8 @@
         <h2>Soy psicóloga, competidora de bikini fitness y personal trainer.</h2>
         <p>Durante años odié mirarme al espejo. Me daba vergüenza lo que veía, no tenía autoestima ni amor propio, así que decidí enfocarme en mí: en trabajar eso que me hacía sentir mal por dentro y por fuera.</p>
         <p>Sé exactamente lo que se siente no tener autoestima, no sentirte cómoda en tu propio cuerpo. <strong>Todo empieza contigo, con tu cuerpo, con cómo te ves</strong>, y por eso hoy acompaño a otras mujeres a vivir ese mismo cambio.</p>
-        <p>Como psicóloga entendí algo clave trabajando con mis pacientes: el problema casi nunca es la rutina, es el sistema de hábitos que la sostiene. DOMFIT une entrenamiento con propósito, alimentación realista y el trabajo mental que hace que el cambio dure.</p>
+        <p>No soy una entrenadora más: soy psicóloga y cambié mi vida gracias al ejercicio. No te enseño solo rutinas, te doy las herramientas para que el gimnasio se convierta en un estilo de vida, cambiando los hábitos y los saboteadores que no te dejan avanzar, para que te vuelvas una mujer disciplinada y comprometida contigo misma.</p>
+        <p>Aquí vas a aprender a amarte, a cuidarte y a cumplir lo que te propones. Por eso diseño cada plan enfocado en tus objetivos físicos, pero también en lo que necesitas para cambiar tu mentalidad y demostrarte amor propio cada día.</p>
         <div class="chip-row">
           <span class="chip"><i></i> Psicóloga</span>
           <span class="chip"><i></i> Competidora bikini fitness</span>
@@ -346,7 +350,7 @@
         <div class="method-card reveal">
           <div class="method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 6.5l11 11M4 9l4-4M20 15l-4 4M2 12h3M19 12h3M12 2v3M12 19v3"/></svg></div>
           <h3>Entrenamiento con propósito</h3>
-          <p>Rutinas específicas para tu objetivo (glúteos, piernas, definición general), con o sin gimnasio.</p>
+          <p>Rutinas específicas para tu objetivo: glúteos, piernas, definición general, trabajadas con máquinas de gimnasio.</p>
         </div>
         <div class="method-card reveal">
           <div class="method-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
@@ -406,10 +410,10 @@
 
           <div class="price-card reveal">
             <div class="price-name">Online Total</div>
-            <div class="price-desc">Entrenamiento 100% online + guía de alimentación.</div>
+            <div class="price-desc">Rutina de gimnasio general + guía de alimentación.</div>
             <div class="price-amount"><span class="num">$49,99</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Rutina personalizada actualizada cada mes</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Rutina de gimnasio general, actualizada cada mes</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía de alimentación completa</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Entrega automática por email al pagar</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Acceso a la guía de hábitos DOMFIT</li>
@@ -437,15 +441,15 @@
           </div>
 
           <div class="price-card reveal">
-            <span class="price-tag">100% personalizado</span>
+            <span class="price-tag">Seguimiento total conmigo</span>
             <div class="price-name">Online Personalizado</div>
-            <div class="price-desc">Asesoría 1:1 online, enfocada en tus objetivos personales.</div>
+            <div class="price-desc">Asesoría 100% personalizada, con mi seguimiento directo en cada paso.</div>
             <div class="price-amount"><span class="num">$99,99</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Plan de entrenamiento y alimentación diseñado exclusivamente para ti</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía semanal con ajustes según tu progreso</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Comunicación directa conmigo durante todo el proceso</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Estructura enfocada 100% en tus objetivos personales</li>
-              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Seguimiento cercano para mantenerte enfocada</li>
             </ul>
             <!-- PEGAR AQUÍ EL LINK DE STAN STORE / PAYHIP DEL PROGRAMA ONLINE PERSONALIZADO -->
             <a href="#checkout" class="btn btn-outline btn-block">Comprar ahora</a>
@@ -510,46 +514,43 @@
       <div class="testi-grid">
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-1.jpg">
-            <img src="assets/img/testimonial-1.jpg" alt="Testimonio de Valentina R." onerror="this.parentElement.classList.add('img-missing')">
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-1.jpg (foto 1 que enviaste: espalda antes/después)">
+            <img src="assets/img/testimonial-1.jpg" alt="Transformación real, antes y después" onerror="this.parentElement.classList.add('img-missing')">
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
             <p class="testi-quote">"Lo que más cambió no fue mi cuerpo, fue mi relación con la comida. Por primera vez sostuve un plan más de un mes."</p>
-            <div><div class="testi-name">Valentina R.</div><div class="testi-result">-6 kg de grasa · 12 semanas</div></div>
+            <div><div class="testi-name">Valentina R.</div></div>
           </div>
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-2.jpg">
-            <img src="assets/img/testimonial-2.jpg" alt="Testimonio de Camila S." onerror="this.parentElement.classList.add('img-missing')">
+          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-2.jpg (foto 2 que enviaste: frente antes/después)">
+            <img src="assets/img/testimonial-2.jpg" alt="Transformación real, antes y después" onerror="this.parentElement.classList.add('img-missing')">
           </div>
           <div class="testi-body">
             <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"Entreno desde casa, sin gimnasio, y el plan se ajusta a mi horario real. Se nota que lo diseñó alguien que entiende psicología."</p>
-            <div><div class="testi-name">Camila S.</div><div class="testi-result">Glúteos y piernas · 16 semanas</div></div>
+            <p class="testi-quote">"Dome, la confianza que he ganado viendo estos resultados es lo que más orgullosa me hace sentir, porque no siento que solo cambié físicamente, sino que esto se volvió un estilo de vida para mí y ya no siento vergüenza de mirarme frente a un espejo: amo lo que veo."</p>
+            <!-- CONFIRMAR: falta el nombre real de esta clienta -->
+            <div><div class="testi-name">Nombre pendiente</div></div>
           </div>
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-3.jpg">
-            <img src="assets/img/testimonial-3.jpg" alt="Testimonio de Andrea M." onerror="this.parentElement.classList.add('img-missing')">
+          <div class="testi-photo is-screenshot photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-3.jpg (captura de WhatsApp de Vale)">
+            <img src="assets/img/testimonial-3.jpg" alt="Testimonio de Vale B. por WhatsApp" onerror="this.parentElement.classList.add('img-missing')">
           </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"Vivo fuera de mi país y aun así el seguimiento se sintió cercano. Recibí todo por email en minutos."</p>
-            <div><div class="testi-name">Andrea M.</div><div class="testi-result">Recomposición corporal · 10 semanas</div></div>
+          <div class="testi-body-caption">
+            <div class="testi-name">Vale B.</div>
           </div>
         </div>
 
         <div class="testi-card reveal">
-          <div class="testi-photo photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-4.jpg">
-            <img src="assets/img/testimonial-4.jpg" alt="Testimonio de Fernanda L." onerror="this.parentElement.classList.add('img-missing')">
+          <div class="testi-photo is-screenshot photo-slot" data-label="REEMPLAZAR: assets/img/testimonial-4.jpg (captura de WhatsApp de Alejandra)">
+            <img src="assets/img/testimonial-4.jpg" alt="Testimonio de Alejandra H. por WhatsApp" onerror="this.parentElement.classList.add('img-missing')">
           </div>
-          <div class="testi-body">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-quote">"Dejé de buscar la dieta perfecta y empecé a construir hábitos que sí puedo mantener."</p>
-            <div><div class="testi-name">Fernanda L.</div><div class="testi-result">-4 kg · hábitos sostenidos</div></div>
+          <div class="testi-body-caption">
+            <div class="testi-name">Alejandra H.</div>
           </div>
         </div>
 
@@ -643,7 +644,7 @@
         </details>
         <details>
           <summary>¿Necesito gimnasio para entrenar?<span class="plus">+</span></summary>
-          <div class="faq-a">No es obligatorio. Al elegir tu programa indicas si entrenas en casa o en gimnasio, y tu rutina se adapta al equipo que tengas disponible.</div>
+          <div class="faq-a">Sí. Mis rutinas están diseñadas para trabajarse con máquinas de gimnasio, así que necesitas acceso a uno para sacarles el máximo provecho.</div>
         </details>
         <details>
           <summary>¿Cómo recibo mi rutina exactamente?<span class="plus">+</span></summary>
