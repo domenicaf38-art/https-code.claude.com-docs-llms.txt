@@ -129,6 +129,8 @@
   #dfx .location-tag{background:var(--ink-black);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 13px;border-radius:100px;white-space:nowrap;}
   #dfx .pricing-group-note{text-align:center;color:var(--ink-mute);font-size:.85rem;margin:-16px 0 28px;}
   #dfx .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;align-items:stretch;max-width:820px;margin:0 auto;}
+  #dfx .pricing-grid.cols-3{grid-template-columns:repeat(3,1fr);max-width:1080px;}
+  #dfx .price-tag{display:inline-flex;align-self:flex-start;background:var(--ink-black);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.03em;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
   #dfx .price-card{padding:36px 30px;display:flex;flex-direction:column;position:relative;border-radius:var(--radius);background:#fff;border:1.5px solid var(--line);}
   #dfx .price-sessions{display:inline-flex;align-self:flex-start;background:var(--pink-tint);color:var(--pink-dark);font-size:.74rem;font-weight:700;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
   #dfx .price-proof{aspect-ratio:16/9;border-radius:12px;margin-bottom:20px;}
@@ -400,7 +402,7 @@
         <div class="pricing-group-head reveal">
           <h3>Programas online</h3>
         </div>
-        <div class="pricing-grid">
+        <div class="pricing-grid cols-3">
 
           <div class="price-card reveal">
             <div class="price-name">Online Total</div>
@@ -432,6 +434,21 @@
             </ul>
             <!-- PEGAR AQUÍ EL LINK DE STAN STORE / PAYHIP DEL PROGRAMA GLÚTEOS PERFECTOS -->
             <a href="#checkout" class="btn btn-block">Comprar ahora</a>
+          </div>
+
+          <div class="price-card reveal">
+            <span class="price-tag">100% personalizado</span>
+            <div class="price-name">Online Personalizado</div>
+            <div class="price-desc">Asesoría 1:1 online, enfocada en tus objetivos personales.</div>
+            <div class="price-amount"><span class="num">$99,99</span><span class="cur">USD / mes</span></div>
+            <ul class="price-list">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Plan de entrenamiento y alimentación diseñado exclusivamente para ti</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía semanal con ajustes según tu progreso</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Estructura enfocada 100% en tus objetivos personales</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Seguimiento cercano para mantenerte enfocada</li>
+            </ul>
+            <!-- PEGAR AQUÍ EL LINK DE STAN STORE / PAYHIP DEL PROGRAMA ONLINE PERSONALIZADO -->
+            <a href="#checkout" class="btn btn-outline btn-block">Comprar ahora</a>
           </div>
 
         </div>
