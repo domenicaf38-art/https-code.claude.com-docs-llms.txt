@@ -224,6 +224,7 @@
     #dfx .method-grid{grid-template-columns:repeat(2,1fr);}
     #dfx .steps{grid-template-columns:1fr;}
     #dfx .pricing-grid{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto;}
+    #dfx .pricing-grid.cols-3{grid-template-columns:1fr;max-width:440px;}
     #dfx .price-card.is-featured{transform:none;}
     #dfx .testi-grid{grid-template-columns:repeat(2,1fr);}
     #dfx .shop-grid{grid-template-columns:repeat(2,1fr);}
@@ -232,7 +233,9 @@
   @media (max-width:560px){
     #dfx section{padding:52px 0;}
     #dfx .section-head{margin-bottom:36px;}
-    #dfx .hero-badges{gap:20px;}
+    #dfx .hero-badges{flex-direction:column;gap:10px;margin-top:28px;}
+    #dfx .hero-badge{flex-direction:row;align-items:baseline;gap:8px;}
+    #dfx .hero-badge span{font-size:.78rem;}
     #dfx .method-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
     #dfx .method-card{padding:22px 18px;}
     #dfx .method-icon{margin-bottom:14px;}
