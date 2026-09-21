@@ -165,6 +165,9 @@
   #dfx .shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start;}
   #dfx .shop-card{overflow:hidden;padding:0;border-radius:var(--radius);background:#fff;border:1px solid var(--line);}
   #dfx .shop-img{aspect-ratio:1/1;background-image:linear-gradient(150deg,var(--pink-pale),var(--pink-tint));position:relative;}
+  #dfx .shop-title-block{aspect-ratio:1/1;background:linear-gradient(155deg,var(--ink-black),#232028);display:flex;align-items:center;justify-content:center;padding:28px;text-align:center;}
+  #dfx .shop-title-block span{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.3rem;line-height:1.15;color:#fff;}
+  #dfx .shop-title-block span em{font-style:normal;color:var(--pink);}
   #dfx .shop-tag{position:absolute;top:14px;left:14px;z-index:2;background:var(--ink-black);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:100px;}
   #dfx .shop-body{padding:22px 22px 26px;}
   #dfx .shop-body h3{font-size:1.02rem;margin-bottom:6px;}
@@ -311,7 +314,7 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="wrap about-grid">
-      <div class="about-photo photo-slot reveal" data-label="REEMPLAZAR: assets/img/about.jpg (foto de perfil de Domenica)">
+      <div class="about-photo photo-slot reveal" data-label="REEMPLAZAR: assets/img/about.jpg (foto de espalda, conjunto negro)">
         <img src="assets/img/about.jpg" alt="Domenica, psicóloga y personal trainer" onerror="this.parentElement.classList.add('img-missing')">
       </div>
       <div class="about-copy reveal">
@@ -438,7 +441,7 @@
             <span class="price-badge">Más elegido</span>
             <div class="price-name">Glúteos Perfectos</div>
             <div class="price-desc">Rutina y alimentación enfocadas 100% en glúteos.</div>
-            <div class="price-proof photo-slot" data-label="REEMPLAZAR: assets/img/gluteos-antes-despues.jpg (antes/después de una clienta)">
+            <div class="price-proof photo-slot" data-label="REEMPLAZAR: assets/img/gluteos-antes-despues.jpg (collage atardecer/competencia)">
               <img src="assets/img/gluteos-antes-despues.jpg" alt="Antes y después de glúteos" onerror="this.parentElement.classList.add('img-missing')">
             </div>
             <div class="price-amount"><span class="num">$53,99</span><span class="cur">USD / mes</span></div>
@@ -598,9 +601,8 @@
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-guia-antiinflamatoria.jpg (cuando tengas la portada de la guía)">
-            <img src="assets/img/product-guia-antiinflamatoria.jpg" alt="Guía Antiinflamatoria" onerror="this.parentElement.classList.add('img-missing')">
-            <span class="shop-tag">Próximamente</span>
+          <div class="shop-title-block">
+            <span>Siéntete <em>liviana</em></span>
           </div>
           <div class="shop-body">
             <h3>Guía Antiinflamatoria</h3>
@@ -613,8 +615,8 @@
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-apparel.jpg (ropa deportiva en tendencia)">
-            <img src="assets/img/product-apparel.jpg" alt="Ropa deportiva DOMFIT" onerror="this.parentElement.classList.add('img-missing')">
+          <div class="shop-title-block">
+            <span>Entrena con <em>actitud</em></span>
           </div>
           <div class="shop-body">
             <h3>Ropa de tendencia para el gym</h3>
@@ -627,8 +629,8 @@
         </div>
 
         <div class="shop-card reveal">
-          <div class="shop-img photo-slot" data-label="REEMPLAZAR: assets/img/product-supplement.jpg">
-            <img src="assets/img/product-supplement.jpg" alt="Suplementos DOMFIT" onerror="this.parentElement.classList.add('img-missing')">
+          <div class="shop-title-block">
+            <span><em>Constancia</em> en cada dosis</span>
           </div>
           <div class="shop-body">
             <h3>Suplemento base DOMFIT</h3>
