@@ -37,27 +37,30 @@
     var box = document.getElementById('burst');
     if (!box || !box.animate || reduced) return;
     var items = [
-      ['msg', '¿Precio? 😍'], ['msg alt', '¡Quiero reservar!'], ['heart', '❤️'], ['icon ig', ''],
-      ['msg', '¿Hacen envíos?'], ['icon wa', ''], ['heart', '🔥'], ['msg alt', 'Me encantó 💖'],
-      ['msg sun', '¿Tienen cupos hoy?'], ['icon tt', ''], ['heart', '😍'], ['msg', 'Info por favor 🙏'],
-      ['icon fb', ''], ['msg alt', '¡Lo quiero!'], ['heart', '💬'], ['msg sun', '¿Dónde están ubicados?'],
-      ['heart', '👏'], ['msg', '¿Aceptan tarjeta?']
+      ['', '¿Tienen cupos esta semana?'], ['alt', 'Me encantó su contenido ✨'], ['heart', '♡'],
+      ['', 'Quiero reservar'], ['icon', 'chat'], ['alt', '¿Cuál es el precio?'], ['heart', '♡'],
+      ['', '¿Hacen envíos a Quito?'], ['icon', 'cam'], ['alt', 'Lo quiero 🤍'], ['', 'Información, por favor'],
+      ['heart', '♡'], ['icon', 'cart'], ['alt', '¿Dónde están ubicados?'], ['', 'Vi su anuncio en Instagram']
     ];
+    var icons = {
+      chat: '<svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg>',
+      cam: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>',
+      cart: '<svg viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-8H6"/><circle cx="9" cy="19" r="1.3"/><circle cx="17" cy="19" r="1.3"/></svg>'
+    };
     var n = 0, live = 0;
     box.classList.add('live');
     function spawn() {
-      if (document.hidden || live > 14) return;
+      if (document.hidden || live > 9) return;
       var it = items[n++ % items.length];
       var el = document.createElement('span');
-      var cls = it[0].split(' ');
-      el.className = 'bub b-' + cls[0] + (cls[1] ? ' ' + cls[1] : '');
-      el.textContent = it[1];
+      el.className = 'bub' + (it[0] ? ' ' + it[0] : '');
+      if (it[0] === 'icon') el.innerHTML = icons[it[1]]; else el.textContent = it[1];
       box.appendChild(el);
       live++;
       var w = box.clientWidth, narrow = w < 480;
       var ang = Math.random() * Math.PI * 2;
-      var dist = (narrow ? 150 : 210) + Math.random() * (narrow ? 60 : 110);
-      var hx = box.clientWidth / 2 - 50, hy = box.clientHeight / 2 - 30;
+      var dist = (narrow ? 150 : 200) + Math.random() * (narrow ? 60 : 90);
+      var hx = Math.max(20, box.clientWidth / 2 - el.offsetWidth / 2 - 8), hy = box.clientHeight / 2 - 30;
       var x = Math.max(-hx, Math.min(hx, Math.cos(ang) * dist));
       var y = Math.max(-hy, Math.min(hy, Math.sin(ang) * dist * 1.05));
       var rot = (Math.random() - .5) * 24;
@@ -66,11 +69,11 @@
         { transform: 'translate(-50%,-50%) translate(' + x * .7 + 'px,' + y * .7 + 'px) scale(1.08) rotate(' + rot + 'deg)', opacity: 1, offset: .25 },
         { transform: 'translate(-50%,-50%) translate(' + x + 'px,' + y + 'px) scale(1) rotate(' + rot + 'deg)', opacity: 1, offset: .75 },
         { transform: 'translate(-50%,-50%) translate(' + x * 1.05 + 'px,' + (y * 1.05 - 30) + 'px) scale(.9) rotate(' + rot + 'deg)', opacity: 0 }
-      ], { duration: 3600 + Math.random() * 1200, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      ], { duration: 5200 + Math.random() * 1400, easing: 'cubic-bezier(.2,.8,.2,1)' });
       anim.onfinish = function () { el.remove(); live--; };
     }
     for (var i = 0; i < 6; i++) setTimeout(spawn, i * 140);
-    setInterval(spawn, 420);
+    setInterval(spawn, 750);
   }
 
   // Contadores vivos del reel y del sticker de mensajes
@@ -80,7 +83,7 @@
     setInterval(function () {
       l += Math.floor(Math.random() * 9) + 1;
       if (likes) likes.textContent = (l / 1000).toFixed(1).replace('.', ',') + 'K';
-      if (Math.random() > .5) { m++; if (msgs) msgs.textContent = '+' + m; }
+      if (Math.random() > .5) { m++; if (msgs) msgs.textContent = '+' + m + ' hoy'; }
       if (Math.random() > .6) { c++; if (com) com.textContent = c; }
     }, 900);
   }
@@ -169,7 +172,7 @@
   function initBrandData() {
     var wa = document.getElementById('waFloat');
     if (wa) wa.href = waLink();
-    var map = { instagram: B.instagram, tiktok: B.tiktok, facebook: B.facebook, whatsapp: waLink() };
+    var map = { instagram: B.instagram, tiktok: B.tiktok, facebook: B.facebook };
     [].forEach.call(document.querySelectorAll('[data-social]'), function (a) {
       if (map[a.dataset.social]) a.href = map[a.dataset.social];
     });
@@ -179,7 +182,7 @@
   // Fotos del equipo: si existen assets/img/anabel.webp y domenica.webp, se muestran
   function initPortraits() {
     var files = ['anabel', 'domenica'];
-    [].forEach.call(document.querySelectorAll('.portrait'), function (el, k) {
+    [].forEach.call(document.querySelectorAll('.p-photo'), function (el, k) {
       if (!files[k]) return;
       var src = 'assets/img/' + files[k] + '.webp', img = new Image();
       img.onload = function () { el.style.backgroundImage = 'url(' + src + ')'; el.classList.add('has-photo'); };
