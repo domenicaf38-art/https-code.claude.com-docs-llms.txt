@@ -1,16 +1,15 @@
 /* ==========================================================================
    Flomidec — datos de marca editables
-   Cambia aquí el número de WhatsApp, correo y redes. No hace falta tocar
-   el HTML para estos datos.
+   Cambia aquí el WhatsApp, correo y redes. No hace falta tocar el HTML.
    ========================================================================== */
 (function () {
   window.__BRAND__ = {
     name: 'Flomidec',
     domain: 'flomidec.com',
-    // Formato internacional sin "+" ni espacios. Ej: 593991234567
-    whatsapp: '593000000000',
+    // Formato internacional sin "+" ni espacios (0984530517 → 593984530517)
+    whatsapp: '593984530517',
     whatsappMessage: 'Hola Flomidec 👋 Quiero información sobre sus servicios.',
-    email: 'hola@flomidec.com',
+    email: '', // aún no hay correo; cuando exista, ponlo aquí
     instagram: 'https://instagram.com/flomidec',
     tiktok: 'https://tiktok.com/@flomidec',
     facebook: 'https://facebook.com/flomidec'
