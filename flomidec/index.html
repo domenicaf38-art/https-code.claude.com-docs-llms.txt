@@ -9,29 +9,28 @@
 <meta property="og:description" content="Landing pages, contenido, videos y pautas en Meta. Y legal empresarial para formalizar tu negocio. Ecuador.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://flomidec.com/">
-<meta name="theme-color" content="#f8eeeb">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f6e6e2'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia' font-style='italic' font-size='38' fill='%23b0767c'%3EF%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#fbe7ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23f6bfcd'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia' font-style='italic' font-size='38' fill='%23ffffff'%3EF%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261020c">
+<link rel="stylesheet" href="styles.css?v=20261020d">
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<!-- Monograma floral (línea fina) -->
+<!-- Monograma 3D -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
-    <linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e2b8ae"/><stop offset=".5" stop-color="#b8797f"/><stop offset="1" stop-color="#d8a99e"/></linearGradient>
-    <symbol id="flor" viewBox="0 0 48 48">
-      <g fill="none" stroke="url(#rg)" stroke-width="1.4" transform="translate(24 24)">
-        <ellipse rx="5.5" ry="11" cy="-10"/>
-        <ellipse rx="5.5" ry="11" cy="-10" transform="rotate(72)"/>
-        <ellipse rx="5.5" ry="11" cy="-10" transform="rotate(144)"/>
-        <ellipse rx="5.5" ry="11" cy="-10" transform="rotate(216)"/>
-        <ellipse rx="5.5" ry="11" cy="-10" transform="rotate(288)"/>
-        <circle r="3.2"/>
-      </g>
+    <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde3ea"/><stop offset=".55" stop-color="#f4b6c6"/><stop offset="1" stop-color="#e99bb0"/></linearGradient>
+    <linearGradient id="mh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <symbol id="mono" viewBox="0 0 64 64">
+      <rect x="4" y="6" width="56" height="56" rx="17" fill="#d98ba0" opacity=".45"/>
+      <rect x="4" y="2" width="56" height="56" rx="17" fill="url(#mg)"/>
+      <rect x="9" y="5" width="46" height="22" rx="11" fill="url(#mh)"/>
+      <path d="M24 44V18h17v4.2H28.6v7.2h10.6v4.1H28.6V44z" fill="#9c5a6c" opacity=".25" transform="translate(1.2 1.6)"/>
+      <path d="M24 44V18h17v4.2H28.6v7.2h10.6v4.1H28.6V44z" fill="#fff"/>
+      <circle cx="44" cy="41.5" r="2.6" fill="#fff"/>
     </symbol>
   </defs>
 </svg>
@@ -39,7 +38,7 @@
 <!-- ================= NAV ================= -->
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#top" class="nav-logo" aria-label="Flomidec, inicio"><svg><use href="#flor"/></svg><span>FLOMIDEC</span></a>
+    <a href="#top" class="nav-logo" aria-label="Flomidec, inicio"><svg><use href="#mono"/></svg><span>FLOMIDEC</span></a>
     <nav class="nav-links" aria-label="Principal">
       <a href="#servicios">Servicios</a>
       <a href="#landings">Landing pages</a>
@@ -86,10 +85,14 @@
 
     <div class="hero-visual reveal" id="heroVisual">
       <div class="arch" aria-hidden="true"></div>
+      <div class="obj sphere sp-a" data-depth="30" aria-hidden="true"></div>
+      <div class="obj sphere grey sp-b" data-depth="-24" aria-hidden="true"></div>
+      <div class="obj ring rg-a" data-depth="18" aria-hidden="true"></div>
+      <div class="obj pill pl-a" data-depth="-14" aria-hidden="true"></div>
       <div class="burst" id="burst" aria-hidden="true">
         <span class="bub static s1">¿Tienen cupos esta semana?</span>
         <span class="bub static heart s2">♡</span>
-        <span class="bub static alt s3">Me encantó su contenido ✨</span>
+        <span class="bub static alt s3">Me encantó su contenido</span>
         <span class="bub static s4">Quiero reservar</span>
         <span class="bub static heart s5">♡</span>
         <span class="bub static alt s6">¿Cuál es el precio?</span>
@@ -159,9 +162,11 @@
 <!-- ================= SERVICIOS ================= -->
 <section class="services" id="servicios">
   <p class="watermark" aria-hidden="true">SERVICIOS</p>
+  <div class="obj sphere sp-svc" aria-hidden="true"></div>
+  <div class="obj ring grey rg-svc" aria-hidden="true"></div>
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Servicios</span>
+      <span class="eyebrow reveal">Servicios</span>
       <h2 class="h2 reveal">Todo lo que tu marca necesita<br>para <em>crecer en digital</em></h2>
     </div>
 
@@ -220,9 +225,10 @@
 
 <!-- ================= PARA QUIÉN ================= -->
 <section class="forwho blush">
+  <div class="obj pill pl-fw" aria-hidden="true"></div>
   <div class="wrap forwho-grid">
     <div>
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Para quién es</span>
+      <span class="eyebrow reveal">Para quién es</span>
       <h2 class="h2 reveal">¿Cómo saber si Flomidec <em>es para ti?</em></h2>
       <ul class="checks">
         <li class="reveal"><span class="ck">✓</span><p>Publicas en redes, pero <b>los mensajes no se convierten en ventas</b>.</p></li>
@@ -235,7 +241,7 @@
     <div class="fw-visual reveal" aria-hidden="true">
       <div class="fw-ring"></div>
       <div class="tablet tablet-lg"><img src="assets/img/andrea-desktop.webp" alt=""></div>
-      <span class="fw-tag"><svg><use href="#flor"/></svg> Diseñado por Flomidec</span>
+      <span class="fw-tag"><svg><use href="#mono"/></svg> Diseñado por Flomidec</span>
     </div>
   </div>
 </section>
@@ -244,7 +250,7 @@
 <section class="landings" id="landings">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Landing pages</span>
+      <span class="eyebrow reveal">Landing pages</span>
       <h2 class="h2 reveal">Así se ve una landing <em>que sí vende</em></h2>
       <p class="lead reveal">Proyectos reales de nuestro estudio. Ábrelos desde tu celular y nota lo rápido que llegas al botón de contacto.</p>
     </div>
@@ -259,7 +265,7 @@
       <a class="show reveal" href="https://www.domfiit.com" target="_blank" rel="noopener">
         <div class="show-frame">
           <div class="browser"><div class="b-bar"><i></i><i></i><i></i><span>domfiit.com</span></div>
-            <div class="shot-ph" data-shot="assets/img/domfiit.webp"><div class="ph-in"><svg><use href="#flor"/></svg><b>domfiit.com</b><small>Ver la landing en vivo</small></div></div>
+            <div class="shot-ph" data-shot="assets/img/domfiit.webp"><div class="ph-in"><svg><use href="#mono"/></svg><b>domfiit.com</b><small>Ver la landing en vivo</small></div></div>
           </div>
         </div>
         <div class="show-meta"><div><h3>Domfiit</h3><span>Fitness · Landing de venta</span></div><span class="show-link">Visitar sitio ↗</span></div>
@@ -275,7 +281,7 @@
 <section class="cases blush" id="casos">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Casos de éxito</span>
+      <span class="eyebrow reveal">Casos de éxito</span>
       <h2 class="h2 reveal">Marcas que ya <em>se hacen notar</em></h2>
     </div>
 
@@ -327,7 +333,7 @@
 <section class="process" id="proceso">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Proceso</span>
+      <span class="eyebrow reveal">Proceso</span>
       <h2 class="h2 reveal">Así trabajamos <em>contigo</em></h2>
     </div>
     <ol class="steps">
@@ -342,9 +348,11 @@
 
 <!-- ================= INVERSIÓN ================= -->
 <section class="pricing marble" id="inversion">
+  <div class="obj sphere sp-price" aria-hidden="true"></div>
+  <div class="obj pill grey pl-price" aria-hidden="true"></div>
   <div class="wrap pricing-grid">
     <div class="price-intro">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Inversión</span>
+      <span class="eyebrow reveal">Inversión</span>
       <h2 class="h2 reveal">Precios claros,<br><em>sin rodeos</em></h2>
       <p class="lead reveal">Valores de referencia. El precio final depende de la cantidad de piezas, páginas o trámites, y te lo confirmamos por escrito antes de empezar.</p>
       <a href="#contacto" class="btn btn-gold btn-arrow reveal">Pedir cotización <span class="arrow" aria-hidden="true">›</span></a>
@@ -369,7 +377,7 @@
 <section class="team" id="nosotras">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Nosotras</span>
+      <span class="eyebrow reveal">Nosotras</span>
       <h2 class="h2 reveal">¿Quiénes están detrás de <em>Flomidec</em>?</h2>
       <p class="lead reveal">Dos fundadoras que se complementan: una piensa, diseña y protege la marca; la otra la convierte en contenido y campañas que salen a tiempo.</p>
     </div>
@@ -394,7 +402,7 @@
 <section class="faq" id="faq">
   <div class="wrap faq-grid">
     <div>
-      <span class="eyebrow reveal"><svg><use href="#flor"/></svg> Preguntas frecuentes</span>
+      <span class="eyebrow reveal">Preguntas frecuentes</span>
       <h2 class="h2 reveal">Lo que suelen <em>preguntarnos</em></h2>
     </div>
     <div class="faq-list">
@@ -410,6 +418,9 @@
 <!-- ================= CONTACTO ================= -->
 <section class="contact" id="contacto">
   <div class="topo" aria-hidden="true"></div>
+  <div class="obj sphere sp-ct1" aria-hidden="true"></div>
+  <div class="obj ring rg-ct" aria-hidden="true"></div>
+  <div class="obj sphere grey sp-ct2" aria-hidden="true"></div>
   <div class="wrap">
     <div class="contact-head">
       <p class="watermark wm-contact" aria-hidden="true">Contacto</p>
@@ -462,7 +473,7 @@
   <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.5.7 4.8 2 6.8L3 29l6.8-2.2c1.9 1 4 1.6 6.2 1.6 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.1c-2 0-3.9-.6-5.6-1.6l-.4-.2-4 1.3 1.3-3.9-.3-.4a10.4 10.4 0 01-1.7-5.7C5.3 9.9 10.1 5.2 16 5.2s10.6 4.7 10.6 10.5S21.9 26.1 16 26.1zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.7-.4z"/></svg>
 </a>
 
-<script defer src="lib/manifest.js?v=20261020c"></script>
-<script defer src="main.js?v=20261020c"></script>
+<script defer src="lib/manifest.js?v=20261020d"></script>
+<script defer src="main.js?v=20261020d"></script>
 </body>
 </html>

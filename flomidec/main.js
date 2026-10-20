@@ -37,9 +37,9 @@
     var box = document.getElementById('burst');
     if (!box || !box.animate || reduced) return;
     var items = [
-      ['', '¿Tienen cupos esta semana?'], ['alt', 'Me encantó su contenido ✨'], ['heart', '♡'],
+      ['', '¿Tienen cupos esta semana?'], ['alt', 'Me encantó su contenido'], ['heart', '♡'],
       ['', 'Quiero reservar'], ['icon', 'chat'], ['alt', '¿Cuál es el precio?'], ['heart', '♡'],
-      ['', '¿Hacen envíos a Quito?'], ['icon', 'cam'], ['alt', 'Lo quiero 🤍'], ['', 'Información, por favor'],
+      ['', '¿Hacen envíos a Quito?'], ['icon', 'cam'], ['alt', 'Lo quiero'], ['', 'Información, por favor'],
       ['heart', '♡'], ['icon', 'cart'], ['alt', '¿Dónde están ubicados?'], ['', 'Vi su anuncio en Instagram']
     ];
     var icons = {
@@ -74,6 +74,27 @@
     }
     for (var i = 0; i < 6; i++) setTimeout(spawn, i * 140);
     setInterval(spawn, 750);
+  }
+
+  // Profundidad 3D: el teléfono y los objetos siguen al cursor
+  function initTilt() {
+    var hv = document.getElementById('heroVisual');
+    if (!hv || !window.matchMedia('(pointer: fine)').matches) return;
+    var phone = hv.querySelector('.phone'), objs = hv.querySelectorAll('[data-depth]');
+    hv.addEventListener('pointermove', function (e) {
+      var r = hv.getBoundingClientRect();
+      var dx = (e.clientX - r.left) / r.width - .5, dy = (e.clientY - r.top) / r.height - .5;
+      phone.style.setProperty('--ry', (dx * 18).toFixed(2) + 'deg');
+      phone.style.setProperty('--rx', (-dy * 12).toFixed(2) + 'deg');
+      [].forEach.call(objs, function (o) {
+        var d = +o.dataset.depth;
+        o.style.transform = 'translate(' + (dx * d).toFixed(1) + 'px,' + (dy * d).toFixed(1) + 'px)';
+      });
+    });
+    hv.addEventListener('pointerleave', function () {
+      phone.style.removeProperty('--ry'); phone.style.removeProperty('--rx');
+      [].forEach.call(objs, function (o) { o.style.transform = ''; });
+    });
   }
 
   // Contadores vivos del reel y del sticker de mensajes
@@ -193,6 +214,7 @@
   function boot() {
     safe(initReveal, 'reveal');
     safe(initBurst, 'burst');
+    safe(initTilt, 'tilt');
     safe(initLiveCounters, 'liveCounters');
     safe(initHeroVideo, 'heroVideo');
     safe(initShots, 'shots');
