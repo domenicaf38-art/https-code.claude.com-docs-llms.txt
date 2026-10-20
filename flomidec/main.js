@@ -156,8 +156,9 @@
         (d.get('negocio') ? 'Marca: ' + d.get('negocio') + '\n' : '') +
         'Servicio: ' + d.get('servicio') + '\n' +
         (d.get('mensaje') ? '\n' + d.get('mensaje') : '');
-      hint.textContent = 'Abriendo WhatsApp…';
-      window.open(waLink(msg), '_blank', 'noopener');
+      var url = waLink(msg);
+      hint.innerHTML = 'Si WhatsApp no se abrió, <a href="' + url + '" target="_blank" rel="noopener"><u>toca aquí</u></a>.';
+      window.open(url, '_blank', 'noopener');
     });
   }
 
