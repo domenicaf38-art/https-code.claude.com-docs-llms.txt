@@ -200,9 +200,9 @@
     var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
   }
 
-  // Fotos del equipo: si existen assets/img/anabel.webp y domenica.webp, se muestran
+  // Fotos del equipo: si existen assets/img/naty.webp y domenica.webp, se muestran
   function initPortraits() {
-    var files = ['anabel', 'domenica'];
+    var files = ['naty', 'domenica'];
     [].forEach.call(document.querySelectorAll('.p-photo'), function (el, k) {
       if (!files[k]) return;
       var src = 'assets/img/' + files[k] + '.webp', img = new Image();

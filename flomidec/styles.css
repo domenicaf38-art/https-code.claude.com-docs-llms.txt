@@ -276,6 +276,7 @@ section { position: relative; scroll-margin-top: 80px; }
 .thanks { margin: 8px 0 0; padding: 22px 24px; width: 100%; border-radius: 18px; background: var(--ivory); border-left: 2px solid var(--gold-2); }
 .thanks blockquote { margin: 0 0 8px; font-family: var(--serif); font-style: italic; font-size: 1.3rem; line-height: 1.35; }
 .thanks blockquote.pending { color: var(--grey); }
+.draft { display: inline-block; margin-bottom: 10px; padding: 3px 10px; border-radius: 999px; background: var(--blush-2); color: var(--ink-2); font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; }
 .thanks figcaption { font-size: .8rem; color: var(--grey); }
 
 .concepts { margin-top: 70px; }
@@ -349,7 +350,7 @@ section { position: relative; scroll-margin-top: 80px; }
 .portrait { position: relative; height: 440px; margin-bottom: 28px; }
 .p-block { position: absolute; left: 0; right: 30%; bottom: 0; height: 52%; border-radius: 24px; background: var(--tile); box-shadow: inset 0 3px 4px rgba(255,255,255,.8), inset 0 -10px 20px rgba(201,100,128,.25), 0 30px 40px -24px rgba(201,100,128,.6); }
 .p-block.alt { left: 30%; right: 0; }
-.p-photo { position: absolute; left: 12%; right: 12%; top: 0; bottom: 24px; border-radius: 180px 180px 24px 24px; background: linear-gradient(170deg, var(--white), var(--grey-l)); background-size: cover; background-position: top center; box-shadow: var(--shadow); display: grid; place-items: center; border: 6px solid var(--white); }
+.p-photo { position: absolute; left: 12%; right: 12%; top: 0; bottom: 24px; border-radius: 180px 180px 24px 24px; background: linear-gradient(170deg, var(--white), var(--grey-l)); background-size: cover; background-position: center 18%; box-shadow: var(--shadow); display: grid; place-items: center; border: 6px solid var(--white); }
 .p-photo span { font-family: var(--caps); font-size: 4rem; letter-spacing: .1em; color: var(--gold-2); opacity: .7; }
 .p-photo.has-photo span { display: none; }
 .member h3 { font-size: 2rem; }
