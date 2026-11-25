@@ -54,6 +54,10 @@
   #dfx .btn-block{width:100%;}
   #dfx .btn-sm{padding:12px 22px;font-size:.85rem;}
 
+  /* PROMO BAR */
+  #dfx .promo-bar{background:var(--ink-black);color:#fff;text-align:center;padding:10px 16px;font-size:.84rem;font-weight:600;}
+  #dfx .promo-bar strong{color:var(--pink);font-weight:800;}
+
   /* NAV */
   #dfx .nav{position:sticky;top:0;z-index:100;padding:18px 0;transition:background .3s ease, border-color .3s ease, backdrop-filter .3s ease;border-bottom:1px solid transparent;background:rgba(255,255,255,0);}
   #dfx .nav.is-solid{background:rgba(255,255,255,.86);backdrop-filter:blur(14px) saturate(160%);-webkit-backdrop-filter:blur(14px) saturate(160%);border-bottom-color:var(--line);}
@@ -138,7 +142,9 @@
   #dfx .price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:6px 16px;border-radius:100px;white-space:nowrap;}
   #dfx .price-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:6px;}
   #dfx .price-desc{color:var(--ink-mute);font-size:.85rem;margin-bottom:22px;min-height:34px;}
-  #dfx .price-amount{display:flex;align-items:baseline;gap:6px;margin-bottom:26px;}
+  #dfx .discount-pill{display:inline-flex;align-self:flex-start;background:var(--ink-black);color:var(--pink);font-size:.7rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px;}
+  #dfx .price-amount{display:flex;align-items:baseline;gap:6px;margin-bottom:26px;flex-wrap:wrap;}
+  #dfx .price-amount .price-old{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink-mute);text-decoration:line-through;margin-right:2px;}
   #dfx .price-amount .num{font-family:'Plus Jakarta Sans',sans-serif;font-size:2.7rem;font-weight:800;}
   #dfx .price-amount .cur{font-size:1rem;color:var(--ink-mute);}
   #dfx .price-list{margin-bottom:20px;flex:1;}
@@ -256,6 +262,9 @@
 <div id="dfx">
 
   <!-- NAV -->
+  <!-- PROMO BAR -->
+  <div class="promo-bar"><strong>Black Week DOMFIT</strong> · 25% OFF en todos los programas · hasta el 3 de diciembre</div>
+
   <nav class="nav" data-nav>
     <div class="wrap nav-inner">
       <a href="#top" class="logo">DOM<span>FIT</span></a>
@@ -416,7 +425,7 @@
       <div class="section-head reveal">
         <span class="eyebrow">Programas</span>
         <h2>Elige el nivel de acompañamiento que necesitas.</h2>
-        <p>Programas online disponibles en cualquier país. Entrenamiento presencial exclusivo para Quito, Ecuador.</p>
+        <p>Por Black Week, 25% OFF en los 5 programas hasta el 3 de diciembre. Programas online disponibles en cualquier país. Entrenamiento presencial exclusivo para Quito, Ecuador.</p>
       </div>
 
       <div class="pricing-group">
@@ -428,7 +437,8 @@
           <div class="price-card reveal">
             <div class="price-name">Online Total</div>
             <div class="price-desc">Rutina de gimnasio general + guía de alimentación.</div>
-            <div class="price-amount"><span class="num">$49,99</span><span class="cur">USD / mes</span></div>
+            <span class="discount-pill">Black Week · -25%</span>
+            <div class="price-amount"><span class="price-old">$49,99</span><span class="num">$37,49</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Rutina de gimnasio general, actualizada cada mes</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía de alimentación completa</li>
@@ -446,7 +456,8 @@
             <div class="price-proof photo-slot" data-label="REEMPLAZAR: assets/img/gluteos-antes-despues.jpg (collage atardecer/competencia)">
               <img src="assets/img/gluteos-antes-despues.jpg" alt="Antes y después de glúteos" onerror="this.parentElement.classList.add('img-missing')">
             </div>
-            <div class="price-amount"><span class="num">$53,99</span><span class="cur">USD / mes</span></div>
+            <span class="discount-pill">Black Week · -25%</span>
+            <div class="price-amount"><span class="price-old">$53,99</span><span class="num">$40,49</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Rutina de glúteos con progresión mensual</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía de alimentación orientada a recomposición</li>
@@ -461,7 +472,8 @@
             <span class="price-tag">Seguimiento total conmigo</span>
             <div class="price-name">Online Personalizado</div>
             <div class="price-desc">Asesoría 100% personalizada, con mi seguimiento directo en cada paso.</div>
-            <div class="price-amount"><span class="num">$99,99</span><span class="cur">USD / mes</span></div>
+            <span class="discount-pill">Black Week · -25%</span>
+            <div class="price-amount"><span class="price-old">$99,99</span><span class="num">$74,99</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Plan de entrenamiento y alimentación diseñado exclusivamente para ti</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Guía semanal con ajustes según tu progreso</li>
@@ -487,7 +499,8 @@
             <div class="price-name">Híbrido</div>
             <div class="price-desc">2 días online + 3 días presenciales por semana.</div>
             <div class="price-sessions">~13 sesiones presenciales/mes</div>
-            <div class="price-amount"><span class="num">$220</span><span class="cur">USD / mes</span></div>
+            <span class="discount-pill">Black Week · -25%</span>
+            <div class="price-amount"><span class="price-old">$220</span><span class="num">$165</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Entrenamiento 1:1 completamente personalizado</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> 3 sesiones presenciales por semana en Quito</li>
@@ -504,7 +517,8 @@
             <div class="price-name">Full Presencial</div>
             <div class="price-desc">Entrenamiento personalizado todos los días.</div>
             <div class="price-sessions">~22 sesiones presenciales/mes</div>
-            <div class="price-amount"><span class="num">$360</span><span class="cur">USD / mes</span></div>
+            <span class="discount-pill">Black Week · -25%</span>
+            <div class="price-amount"><span class="price-old">$360</span><span class="num">$270</span><span class="cur">USD / mes</span></div>
             <ul class="price-list">
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Entrenamiento 1:1 completamente personalizado</li>
               <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Sesión presencial de lunes a viernes en Quito</li>
